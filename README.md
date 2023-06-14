@@ -1,5 +1,5 @@
 <h1 align="center">
-    <b>Ecommerce Final Project<br> .NET Core and HTML, CSS and JS </b> 
+    <b>Ecommerce Project<br> .NET Core and HTML, CSS and JS </b> 
 <br>
 </h1>
 
