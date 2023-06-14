@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    <script src="js/hardcode.js"></script>
+    <script src="js/script.js"></script>
+</head>
+  <body onload="login_getInitialInformation()">
+    
+    <!-- JM:Section -->
+    <div id="login_Container" class="container-fluid bg">
+      <h1><a href="index.html" style="color:white;">Pets & More</a></h1>
+        <!-- JM: Row -->
+        <div class="row justify-content-center">
+            <!-- JM: Col  -->
+            <div class="col-12 col-sm-6 col-md-3">
+                 <!-- JM:Form -->
+                <form class="login_form-container" onsubmit="return login_validate()">
+                    
+                    <div class="mb-4">
+                      <label for="lemail" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="iemail" >
+                    </div>
+
+                    <div class="mb-4">
+                      <label for="lpassword" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="ipassword">
+                    </div>
+                    <div   role="alert" id="login-error">
+                       
+                    </div>
+                    
+              
+                    <!-- submit -->
+                    <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                    </div>
+                    <!-- /submit -->
+                    <p class="small mb-5 pb-lg-2"><a class="text-muted" href="forgotPassword.html">Forgot password?</a></p>
+                    <p>Don't have an account? <a href="createAccount.html" class="link-info">Register here</a></p>
+                  </form>
+                  <!-- JM: /Form -->
+            </div>
+            <!-- JM: /Col  -->
+        </div>
+        <!--JM: /Row -->
+    </div>
+ 
+    <!-- JM:/Section -->
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

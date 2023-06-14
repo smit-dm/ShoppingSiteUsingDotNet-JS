@@ -1,0 +1,72 @@
+
+ 
+/* JM: Login */
+
+
+#login_Container.bg {
+    background-image: url('../images/backgrounds_login/dogs_login3.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center center;
+    height: 100vh;
+} 
+
+ 
+.login_form-container{
+    position: absolute;
+    top:150px;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000000;
+}
+
+.signup_form-container{
+    position: absolute;
+    top:40px;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000000;
+    width: 30%;
+}
+
+.star-active {
+    color: #FBC02D;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.userimage  {
+    width:40%;
+    height: 5hv;
+}
+
+#rateProduct-number { 
+    color: #a5a4a4;
+}
+
+.rating-header {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+#comment-display-image{
+    width: 400px;
+    height: 225px;
+    background-position: center;
+    background-size: cover;
+  }
+
+
+/* JM: Login */

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comments</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    <!--  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!--  -->
+    <script src="js/hardcode.js"></script>
+    <script src="js/script.js"></script>
+</head>
+  <body onload="comments_onload()">
+    <!--JM Header -->
+    <div class="container">
+      <nav class="navbar navbar-expand-lg bg-light" id="navbar"></nav>
+    </div>    
+    <!--JM /Header -->
+    <!-- JM: Section -->
+    <section style="background-color: #eee;">
+        <!-- JM: //Container -->
+        <div class="container my-5 py-5">
+          <!-- row -->
+
+          <button  class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#reviewScreen" id="btnReview" onclick="reset_ratingValue()">+ Add a Review</button>
+
+        
+      
+          <!-- Add a review -->
+           <!-- Modal -->
+          <div class="modal fade" id="reviewScreen" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">We'd love your feedback</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" >
+                  <!-- form -->
+                  <form class="was-validated" method="post"  action="javascript:void(0);" onsubmit="hideModal();">
+                  <!-- Rating -->
+                  <div class="form-group mb-3" id="rating-ability-wrapper">
+                    <label class="control-label" for="rating">
+                    <span class="field-label-header">How would you rate this product?</span><br>
+                    <span class="field-label-info"></span>
+                    <input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
+                    </label>
+                    <h2 class="bold rating-header" >
+                      
+                    <span class="selected-rating" id="rateValue">0</span><small> / 5</small>
+                    </h2>
+                    <input type="number" class="d-none form-control is-valid" id="selected_rating_h"  required>
+                    <div class="invalid-feedback">
+                      rate required
+                    </div>
+                    <button type="button" class="btnrating btn btn-default btn-lg" data-attr="1" id="rating-star-1">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <!-- //Rating -->
+                  <!-- Comment -->
+                  <div class="form-group mb-3">
+                    <label for="lcomment">Comment</label>
+                    <textarea class="form-control" id="icomment" rows="3" required></textarea>
+                    <div class="invalid-feedback">Requiered field</div>
+                  </div>
+                  <!-- //Comment -->
+
+                  <!--JM: upload Image -->
+                  <div class="form-group mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input class="form-control mb-3" type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">
+                    <div id="comment-display-image" class="d-none"></div>
+                    </div> 
+           
+                  <!--JM: //upload Image -->
+                </div>
+                <!-- JM: Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary"  >Write Review</button>
+                </div>
+                <!-- JM: //Modal footer -->
+              </div>
+               <!-- JM: //Modal -->
+            </form>
+            </div>
+          </div>          
+          <!-- //Add a review -->
+          <div class="row d-flex justify-content-center">
+            <!-- JM: Col -->
+            
+            <div class="col-md-12 col-lg-10 col-xl-8" id="cards">
+              <!-- JM: //Card -->
+              <div class="card">
+              </div>
+              <!-- JM: //Card -->
+            </div>
+            <!-- JM: //Col -->
+          </div>
+           <!-- JM: //row -->
+        </div>
+        <!-- JM: //Container -->
+      </section>
+      <!-- JM: //Section -->
+      <!--JM: Footer  -->
+      <div class="container">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2 text-muted">Products</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2 text-muted">Login</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2 text-muted">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2 text-muted">Account</a>
+            </li>
+          </ul>
+          <p class="text-center text-muted">&copy; 2022 Pets & More, Inc</p>
+        </footer>
+      </div>      
+      
+      <!-- JM: //Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="js/navbar.js"></script>
+  </body>
+</html>
