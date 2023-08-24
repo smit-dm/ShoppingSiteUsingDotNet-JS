@@ -44,7 +44,8 @@ const productCard = (product) => {
 };
 
 function getProducts() {
-  const apiUrl = "https://localhost:7147/api/products";
+  const domain = document.write(document.location);
+  const apiUrl = `https://${domain}/api/products`;
   return fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
