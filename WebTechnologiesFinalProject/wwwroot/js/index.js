@@ -45,7 +45,7 @@ const productCard = (product) => {
 
 function getProducts() {
   const domain = document.location;
-  const apiUrl = `https://${domain}/api/products`;
+  const apiUrl = `https://${domain}api/products`;
   return fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
